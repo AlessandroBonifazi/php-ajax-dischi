@@ -18,18 +18,15 @@
     
         <main>
             <div class="ab-container">
-                <?php 
-                include_once 'database/albumsData.php';
-                foreach ($albums as $album) {
-                    echo(
-                        '<div class="ab-card"><img src="' . 
-                        $album['poster'] . '" alt="cover" /><h2>' . 
-                        $album['title'] . '</h2><h5>' . 
-                        $album['author'] . '</h5><h5>' . 
-                        $album['year'] . '<h5></div>'
-                    );
-                }
-                ?>
+                <!-- card -->
+                <div v-for="(item, index) in albums" :key="index" class="ab-card">
+                  <!-- img -->
+                  <img :src="item.poster" :alt="item.title" />
+                  <!-- details -->
+                  <h2>{{ item.title }}</h2>
+                  <h5>{{ item.author }}</h5>
+                  <h5>{{ item.year }}</h5>
+                </div>
             </div>
         </main>
     </div>
