@@ -1,6 +1,7 @@
 // Debug
 console.log('JS OK');
 
+// Vue JS
 const app = new Vue({
     el: '#app',
     data() {
